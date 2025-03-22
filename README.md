@@ -1,4 +1,4 @@
-# SAVFE - Smart Attendance Verification using Facial Evaluation
+# SAVFE - Smart Face Verification
 
 SAVFE is a web-based application for student attendance verification using face recognition. This system captures student faces and matches them against a pre-stored database to ensure accurate attendance tracking.
 
