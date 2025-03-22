@@ -1,0 +1,310 @@
+/* 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0a243b;
+    color: white;
+}
+
+.open-modal-btn {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.open-modal-btn:hover {
+    background-color: #004080;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgba(0, 47, 93, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    font-size: 16px;
+} */
+
+/* Enter Button */
+/* .enter-button {
+    background: white;
+    color: #0a243b;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enter-button:hover {
+    background: #ccc;
+} */
+
+/* General Reset */
+body {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/pexels-photo-443383.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: -10;
+}
+
+/* Overlay effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a4272; /* Blue background */
+    opacity: 0.8;
+    z-index: -9; /* Ensure it appears above the background */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    height: 15vh;
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+}
+
+.header .profile img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.header .welcome {
+    font-size: 24px;
+}
+
+.header .badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.badge img{
+    width: 80%;
+}
+
+.main {
+    display: flex;
+    margin-top: 20px;
+    height: 65vh;
+}
+
+.sidebar {
+    display: flex;
+    flex: 1;
+    max-width: 300px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar .cs{
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.cs img{
+    width: 100%;
+}
+
+.sidebar .button {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .button button {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.calendar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.calendar h3 {
+    margin-bottom: 10px;
+}
+
+.content {
+    flex: 3;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.content .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    color: #fff;
+}
+
+.content .folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.fol{
+    font-size: 30px;
+    color: #ffcc2c;
+}
+
+.fil{
+    font-size: 30px;
+    color: lightblue;
+}
+
+.csvv{
+    font-size: 30px;
+    color: lightgreen;
+}
+
+.mus{
+    font-size: 30px;
+    color: purple;
+}
+
+
+.content .file {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.opt{
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 840px;
+}
+
+.trashBin{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 25px;
+}
+.pluss{
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 25px;
+}

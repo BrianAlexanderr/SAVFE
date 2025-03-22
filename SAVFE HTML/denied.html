@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <link rel="stylesheet" href="styleDenied.css">
+</head>
+<body>
+    <div class="access-denied-container">
+        <h1>ACCESS DENIED</h1>
+        <div class="warning-icon">
+            <img src="images/warning.png" alt="Warning Icon">
+        </div>
+        <p>You Have No Access To This File</p>
+        <button class="back-button" onclick="goBack()">BACK</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

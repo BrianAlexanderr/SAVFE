@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Granted</title>
+    <link rel="stylesheet" href="granted.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">ACCESS GRANTED</h1>
+        <div class="content">
+            <div class="profile">
+                <img id="image" src="" alt="Profile Picture">
+            </div>
+            <div class="info">
+                <p><strong>NAME :</strong> <span id="name"></span></p>
+                <p><strong>AGE :</strong> 21</p>
+                <p><strong>ROLE :</strong> STAFF</p>
+            </div>
+        </div>
+        <a href="popUp.html"><button class="enter-btn">ENTER</button></a>
+    </div>
+    <script>
+        console.log(localStorage.getItem('name'), localStorage.getItem('imagePath'))
+        //Retrieve name and imagePath from local storage
+        const name = localStorage.getItem("name");
+        const imagePath = localStorage.getItem("imagePath");
+
+        //add the variable into the html page
+        document.getElementById('name').textContent = name;
+        document.getElementById('image').src = imagePath;
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access</title>
+    <link rel="stylesheet" href="styleScan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+    <div class="main-container">
+        <a href="index.html"><i class="fa-solid fa-arrow-left left"></i></a>
+        <div class="camera-interface">
+            <div class="camera-text">PLEASE OPEN YOUR CAMERA</div> 
+            <div class="camera-frame">
+                <canvas id="canvas"></canvas>
+                <video id="camera" autoplay playsinline></video>
+            </div>
+        </div>
+        <button id="next-button">Scan</button>
+    </div>
+    <script>
+        const camera = document.getElementById('camera');
+        const canvas = document.getElementById('canvas');
+        //get canvas from captured image with 2 Dimension
+        const ctx = canvas.getContext('2d');
+        const scan = document.getElementById('next-button')
+        //Access the camera
+        navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then((stream) => {
+                camera.srcObject = stream;
+                camera.play();
+                camera.onloadedmetadata = () => {
+                    // Set canvas dimensions to match the video
+                    canvas.width = camera.videoWidth;
+                    canvas.height = camera.videoHeight;
+                };
+            })
+            .catch((error) => {
+                console.error("Error accessing the camera: ", error);
+                window.location.href = "denied.html"
+            });
+        //Event when the scan button is clicked
+        scan.addEventListener('click', async ()=>{
+            //put image into ctx variable
+            ctx.drawImage(camera, 0, 0, canvas.width, canvas.height);
+            let capturedImage = canvas.toDataURL('image/jpeg');
+            //create a form data for API
+            const formData = new FormData();
+            const blob = await fetch(capturedImage)
+                .then(res => res.blob());
+            formData.append('image', blob, 'photo.jpg');
+            //fetch the API with POST method to send the form
+            fetch('http://127.0.0.1:8000/wow/predict/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data=>{
+                //confidence checking
+                if(data.confidence.toFixed(2) < 0.80){
+                    window.location.href = "denied.html"
+                }else{
+                    //save the local name so the other pages can access these variable
+                    localStorage.setItem('name', data.predicted_person);
+                    //save the local img url so the other pages can access these variable
+                    if(localStorage.getItem('name') == 'Jennifer Lawrence'){
+                        localStorage.setItem('imagePath', 'jl.jpg')
+                    }else if(localStorage.getItem('name') == 'Johnny Depp'){
+                        localStorage.setItem('imagePath', 'JD.jpeg')
+                    }else if(localStorage.getItem('name') == 'Leonardo Dicaprio'){
+                        localStorage.setItem('imagePath', 'LD.jpg')
+                    }else if(data.predicted_person == 'Megan Fox'){
+                        localStorage.setItem('imagePath', 'MF.jpg')
+                    }else if(data.predicted_person == 'Michael Wijaya'){
+                        localStorage.setItem('imagePath', 'Mike1.jpg')
+                    }else if(data.predicted_person == 'Robert Downey Jr'){
+                        localStorage.setItem('imagePath', 'RDJ.jpg')
+                    }else if(data.predicted_person == 'Scarlet Johansson'){
+                        localStorage.setItem('imagePath', 'SJ.jpg')
+                    }else if(data.predicted_person == 'Tom Cruise'){
+                        localStorage.setItem('imagePath', 'TC.jpg')
+                    }else if(data.predicted_person == 'Tom Hanks'){
+                        localStorage.setItem('imagePath', 'TH.jpeg')
+                    }else if(data.predicted_person == 'Will Smith'){
+                        localStorage.setItem('imagePath', 'WS.jpeg')
+                    }
+                    console.log(localStorage.getItem('name'), localStorage.getItem('imagePath'))
+                    window.location.href = "granted.html"
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>

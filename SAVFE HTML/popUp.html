@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Model</title>
+    <link rel="stylesheet" href="styleFile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile">
+                <img id="image" src="" alt="Profile Picture">
+                <div class="welcome">Welcome,<br><span id="name"></span></div>
+            </div>
+            <div class="badge">
+                <img src="images\top secretl.png" alt="">
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="sidebar">
+                <div class="cs">
+                    <img src="images\csl 1.png" alt="">
+                </div>
+                <div class="button">
+                    <button>ASK HELP</button>
+                </div>
+                <div class="calendar">
+                    <h3>May 2026</h3>
+                    <p>Calendar Placeholder</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="opt">
+                    <i class="fa-solid fa-plus pluss"></i>
+                    <i class="fa-solid fa-trash trashBin"></i>
+                </div>
+                <div class="grid">
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder1</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder2</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder3</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder4</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder5</h3>
+                    </div>
+
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder6</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder7</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder8</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder9</h3>
+                    </div>
+                    <div class="folder">
+                        <i class="fa-solid fa-folder fol"></i>
+                        <h3>Folder10</h3>
+                    </div>
+
+                    <div class="file doc">
+                        <i class="fa-solid fa-file fil"></i>
+                        <h3>File1</h3>
+                    </div>
+                    <div class="file doc">
+                        <i class="fa-solid fa-file fil"></i>
+                        <h3>File2</h3>
+                    </div>
+                    <div class="file csv">
+                        <i class="fa-solid fa-file-csv csvv"></i>
+                        <h3>CSV1</h3>
+                    </div>
+                    <div class="file csv">
+                        <i class="fa-solid fa-file-csv csvv"></i>
+                        <h3>CSV2</h3>
+                    </div>
+                    <div class="file audio">
+                        <i class="fa-solid fa-music mus"></i>
+                        <h3>MP3</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script>
+        //Retrieve name and imagePath from local storage
+        const name = localStorage.getItem("name");
+        const imagePath = localStorage.getItem("imagePath");
+
+        //add the variable into the html page
+        document.getElementById('name').textContent = name;
+        document.getElementById('image').src = imagePath;
+     </script>
+</body>
+</html>

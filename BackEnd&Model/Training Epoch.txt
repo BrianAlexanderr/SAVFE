@@ -1,0 +1,61 @@
+Training Epoch
+
+Found 886 images belonging to 10 classes.
+Found 221 images belonging to 10 classes.
+Training Fold 1
+c:\Users\LENOVO\miniconda3\Lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+Epoch 1/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 179s 5s/step - accuracy: 0.2156 - loss: 2.9969 - val_accuracy: 0.3982 - val_loss: 1.9951
+Epoch 2/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 147s 5s/step - accuracy: 0.5677 - loss: 1.3546 - val_accuracy: 0.5928 - val_loss: 1.5034
+Epoch 3/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 146s 5s/step - accuracy: 0.6681 - loss: 0.9704 - val_accuracy: 0.7240 - val_loss: 1.0946
+Epoch 4/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.7919 - loss: 0.6574 - val_accuracy: 0.8281 - val_loss: 0.7481
+Epoch 5/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.8667 - loss: 0.4761 - val_accuracy: 0.8778 - val_loss: 0.5685
+Training Fold 2
+Epoch 1/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 143s 5s/step - accuracy: 0.9086 - loss: 0.3466 - val_accuracy: 0.9050 - val_loss: 0.4817
+Epoch 2/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.9275 - loss: 0.2799 - val_accuracy: 0.9186 - val_loss: 0.3586
+Epoch 3/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.9284 - loss: 0.2557 - val_accuracy: 0.9457 - val_loss: 0.2552
+Epoch 4/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 143s 5s/step - accuracy: 0.9608 - loss: 0.2087 - val_accuracy: 0.9276 - val_loss: 0.3126
+Epoch 5/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 140s 5s/step - accuracy: 0.9724 - loss: 0.1431 - val_accuracy: 0.9457 - val_loss: 0.2898
+Training Fold 3
+Epoch 1/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 142s 5s/step - accuracy: 0.9665 - loss: 0.1607 - val_accuracy: 0.9367 - val_loss: 0.2713
+Epoch 2/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 144s 5s/step - accuracy: 0.9787 - loss: 0.1455 - val_accuracy: 0.9457 - val_loss: 0.2787
+Epoch 3/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.9722 - loss: 0.1437 - val_accuracy: 0.9548 - val_loss: 0.2108
+Epoch 4/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 142s 5s/step - accuracy: 0.9728 - loss: 0.1466 - val_accuracy: 0.9502 - val_loss: 0.2516
+Epoch 5/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 143s 5s/step - accuracy: 0.9840 - loss: 0.1087 - val_accuracy: 0.9502 - val_loss: 0.2493
+Training Fold 4
+Epoch 1/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 141s 5s/step - accuracy: 0.9918 - loss: 0.1158 - val_accuracy: 0.9502 - val_loss: 0.2894
+Epoch 2/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 142s 5s/step - accuracy: 0.9829 - loss: 0.1170 - val_accuracy: 0.9638 - val_loss: 0.1824
+Epoch 3/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 144s 5s/step - accuracy: 0.9830 - loss: 0.1092 - val_accuracy: 0.9321 - val_loss: 0.2615
+Epoch 4/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.9885 - loss: 0.0884 - val_accuracy: 0.9412 - val_loss: 0.2237
+Epoch 5/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.9771 - loss: 0.1050 - val_accuracy: 0.9593 - val_loss: 0.2338
+Training Fold 5
+Epoch 1/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 145s 5s/step - accuracy: 0.9912 - loss: 0.0980 - val_accuracy: 0.9593 - val_loss: 0.1921
+Epoch 2/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 146s 5s/step - accuracy: 0.9913 - loss: 0.0846 - val_accuracy: 0.9774 - val_loss: 0.1337
+Epoch 3/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 143s 5s/step - accuracy: 0.9913 - loss: 0.0811 - val_accuracy: 0.9367 - val_loss: 0.2075
+Epoch 4/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 144s 5s/step - accuracy: 0.9916 - loss: 0.0819 - val_accuracy: 0.9548 - val_loss: 0.2346
+Epoch 5/5
+28/28 ━━━━━━━━━━━━━━━━━━━━ 144s 5s/step - accuracy: 0.9939 - loss: 0.0869 - val_accuracy: 0.9548 - val_loss: 0.1428

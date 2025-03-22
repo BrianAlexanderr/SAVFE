@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+  <h1>Capture and Predict Face Recognition</h1>
+
+  <!-- Camera display -->
+  <video id="camera" autoplay playsinline width="400" height="300"></video>
+  <canvas id="snapshot" width="400" height="300" style="display:none;"></canvas>
+
+  <!-- Buttons for capturing photo and sending to API -->
+  <button id="capture">Capture Photo</button>
+  <button id="send">Send to Predict</button>
+
+  <p id="result"></p>
+
+  <script>
+    const video = document.getElementById('camera');
+    const canvas = document.getElementById('snapshot');
+    const resultDisplay = document.getElementById('result');
+    const captureButton = document.getElementById('capture');
+    const sendButton = document.getElementById('send');
+    const context = canvas.getContext('2d');
+    let capturedImage = null;
+
+    // Start the camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        console.error('Error accessing camera:', err);
+      });
+
+    // Capture photo when the button is clicked
+    captureButton.addEventListener('click', () => {
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      capturedImage = canvas.toDataURL('image/jpeg');  // Capture as base64 string
+      resultDisplay.textContent = 'Photo captured, ready to send.';
+    });
+
+    // Send the captured photo to the backend API
+    sendButton.addEventListener('click', async () => {
+      if (!capturedImage) {
+        resultDisplay.textContent = 'Please capture a photo first.';
+        return;
+      }
+
+      // Prepare the data to send (base64 encoded image)
+      const formData = new FormData();
+      const blob = await fetch(capturedImage)
+        .then(res => res.blob());
+      formData.append('image', blob, 'photo.jpg');
+
+      // Send the image to the Django API
+      fetch('http://127.0.0.1:8000/wow/predict/', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.predicted_person) {
+          resultDisplay.textContent = `Predicted Person: ${data.predicted_person} (Confidence: ${data.confidence.toFixed(2)})`;
+        } else {
+          resultDisplay.textContent = 'Prediction failed.';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        resultDisplay.textContent = 'Error occurred while sending the image.';
+      });
+    });
+  </script>
+</body>
+</html>
+
