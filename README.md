@@ -10,6 +10,12 @@ SAVFE is a simple web-based application for userface verification using face rec
 - Chat system between doctors and patients
 - History tracking for diagnoses
 
+<br>
+## Tech Stack
+- HTML, CSS, JS for frontend
+- Django for backend
+- Python for AI 
+
 ## 🛠 Installation
 
 ### 1️⃣ Clone the Repository
