@@ -14,7 +14,7 @@ SAVFE is a simple web-based application for userface verification using face rec
 
 ### 1️⃣ Clone the Repository
 
-`git clone https://github.com/BrianAlexanderr/SAVFE.git`
+`git clone https://github.com/BrianAlexanderr/SAVFE.git`<br>
 `cd SAVFE`
 
 ### 2️⃣ Install Dependencies
