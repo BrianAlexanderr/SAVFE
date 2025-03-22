@@ -24,26 +24,26 @@ Ensure you have Python installed, then install dependencies from requirements.tx
 
 ### 3️⃣ Run the Server
 
-`python manage.py runserver`
+`python manage.py runserver`<br>
 Open http://127.0.0.1:8000/ in your browser.
 
 ### 📂 Project Structure
 SAVFE/
-│── BackEnd&Model/    # AI models & backend logic
-│── SAVFE HTML/       # Frontend templates
-│── manage.py         # Django project entry point
-│── requirements.txt  # Required dependencies
-└── README.md         # Project documentation
-
+│── BackEnd&Model/    # AI models & backend logic<br>
+│── SAVFE HTML/       # Frontend templates<br>
+│── manage.py         # Django project entry point<br>
+│── requirements.txt  # Required dependencies<br>
+└── README.md         # Project documentation<br>
+<br><br>
 ### 🤖 AI Model Usage
 The AI model is stored separately and must be downloaded before running the project. The model files (.keras) exceed GitHub's file size limit and are stored using Git LFS.
-
+<br><br>
 #### Download the Model:
 Request the model files from the project owner.
-
+<br><br>
 Place them in BackEnd&Model/.
-
-📜 License
+<br><br>
+### 📜 License
 This project is licensed under the MIT License.
 
 
